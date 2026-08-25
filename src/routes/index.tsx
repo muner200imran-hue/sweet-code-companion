@@ -10,15 +10,15 @@ import { AnimatedCounter } from "@/components/animated-counter";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Northline Studio — Interactive systems for smart tech" },
+      { title: "Al-Muhtarif — Interactive systems for smart tech" },
       {
         name: "description",
         content:
-          "Northline Studio builds dark-mode interfaces, realtime dashboards, and device software for hardware and AI teams.",
+          "Al-Muhtarif builds dark-mode interfaces, realtime dashboards, and device software for hardware and AI teams.",
       },
       {
         property: "og:title",
-        content: "Northline Studio — Interactive systems for smart tech",
+        content: "Al-Muhtarif — Interactive systems for smart tech",
       },
       {
         property: "og:description",
