@@ -3,13 +3,13 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Northline Studio" },
+      { title: "About — Al-Muhtarif" },
       {
         name: "description",
         content:
           "A small web studio focused on clarity, speed, and long-lived websites for independent teams.",
       },
-      { property: "og:title", content: "About — Northline Studio" },
+      { property: "og:title", content: "About — Al-Muhtarif" },
       {
         property: "og:description",
         content:
@@ -42,7 +42,7 @@ function About() {
         About
       </h1>
       <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
-        Northline Studio is a small team of designers and developers. We work
+        Al-Muhtarif is a small team of designers and developers. We work
         directly with founders and marketing leads — no account layers, no
         handoffs that lose the plot.
       </p>

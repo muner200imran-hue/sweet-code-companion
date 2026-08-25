@@ -8,13 +8,13 @@ import { Button } from "@/components/ui/button";
 export const Route = createFileRoute("/contact")({
   head: () => ({
     meta: [
-      { title: "Contact — Northline Studio" },
+      { title: "Contact — Al-Muhtarif" },
       {
         name: "description",
         content:
           "Tell us about your project and we'll reply within two business days.",
       },
-      { property: "og:title", content: "Contact — Northline Studio" },
+      { property: "og:title", content: "Contact — Al-Muhtarif" },
       {
         property: "og:description",
         content:
