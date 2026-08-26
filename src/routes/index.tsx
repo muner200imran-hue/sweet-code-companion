@@ -14,7 +14,7 @@ export const Route = createFileRoute("/")({
       {
         name: "description",
         content:
-          "Al-Muhtarif builds dark-mode interfaces, realtime dashboards, and device software for hardware and AI teams.",
+          "Lova builds dark-mode interfaces, realtime dashboards, and device software for hardware and AI teams.",
       },
       {
         property: "og:title",
@@ -97,27 +97,29 @@ function LiveSignals() {
   }, []);
 
   return (
-    <Card className="glow-surface">
-      <CardHeader className="flex-row items-center justify-between space-y-0">
-        <CardTitle className="text-sm font-medium">System signals</CardTitle>
+    <Card className="glow-surface border-border/60">
+      <CardHeader className="flex-row items-center justify-between space-y-0 pb-4">
+        <CardTitle className="text-sm font-medium tracking-wide text-foreground">
+          System signals
+        </CardTitle>
         <span className="inline-flex items-center gap-2 text-xs text-muted-foreground">
           <span className="live-dot size-2 rounded-full bg-primary" aria-hidden="true" />
           Live
         </span>
       </CardHeader>
-      <CardContent className="space-y-5">
+      <CardContent className="space-y-6">
         {signals.map((s) => (
           <div key={s.label}>
-            <div className="flex items-baseline justify-between text-sm">
+            <div className="mb-3 flex items-baseline justify-between text-sm">
               <span className="text-muted-foreground">{s.label}</span>
-              <span className="tabular-nums font-medium text-foreground">
-                {s.value.toFixed(0)} {s.unit}
+              <span className="tabular-nums font-mono text-sm font-semibold text-foreground">
+                {s.value.toFixed(0)}<span className="text-xs text-muted-foreground">{s.unit}</span>
               </span>
             </div>
             <Progress
               value={s.value}
               aria-label={`${s.label}: ${s.value.toFixed(0)} ${s.unit}`}
-              className="mt-2 h-1.5 transition-all duration-700"
+              className="h-1.5 transition-all duration-700"
             />
           </div>
         ))}
@@ -129,41 +131,55 @@ function LiveSignals() {
 function Index() {
   return (
     <div>
-      <section className="relative overflow-hidden border-b border-border">
-        <div className="tech-grid pointer-events-none absolute inset-0 opacity-70" aria-hidden="true" />
+      {/* Hero Section */}
+      <section className="relative overflow-hidden border-b border-border/50">
+        <div className="tech-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true" />
         <div
-          className="pointer-events-none absolute -top-40 left-1/2 size-[36rem] -translate-x-1/2 rounded-full opacity-25 blur-3xl"
+          className="pointer-events-none absolute -top-40 left-1/2 size-[42rem] -translate-x-1/2 rounded-full opacity-20 blur-3xl"
           style={{ backgroundImage: "var(--gradient-primary)" }}
           aria-hidden="true"
         />
-        <div className="relative mx-auto grid max-w-6xl gap-12 px-4 py-20 sm:px-6 sm:py-28 lg:grid-cols-[1.15fr_1fr] lg:items-center">
-          <div>
-            <Badge variant="outline" className="border-primary/40 text-primary">
-              Systems studio
+        <div
+          className="relative mx-auto grid max-w-6xl gap-14 px-4 py-24 sm:px-6 sm:py-32 lg:grid-cols-[1.2fr_1fr] lg:items-center"
+        >
+          <div className="space-y-8">
+            <Badge
+              variant="outline"
+              className="border-primary/50 bg-primary/5 px-4 py-1 text-sm font-medium text-primary"
+            >
+              Systems studio — Hardware & AI teams
             </Badge>
-            <h1 className="mt-5 text-4xl font-semibold tracking-tight text-foreground sm:text-5xl md:text-6xl">
-              Interfaces for machines that <span className="text-gradient">think</span>.
+
+            <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl leading-[1.05]">
+              Interfaces for{" "}
+              <span className="text-gradient-primary">machines that think</span>.
             </h1>
-            <p className="mt-6 max-w-xl text-base leading-relaxed text-muted-foreground sm:text-lg">
+
+            <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
               We design and build the dark-mode consoles, realtime dashboards, and
               device software that hardware and AI teams run their operations on.
             </p>
-            <div className="mt-8 flex flex-wrap gap-3">
+
+            <div className="flex flex-wrap gap-4 pt-2">
               <Link
                 to="/contact"
-                className="inline-flex items-center justify-center rounded-md bg-primary px-5 py-2.5 text-sm font-medium text-primary-foreground transition-all hover:brightness-110 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="group inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:brightness-110 hover:shadow-xl hover:shadow-primary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 Start a project
+                <svg className="ml-2 size-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M17 8l4 4m0 0l-4 4m4-4H3" />
+                </svg>
               </Link>
               <Link
                 to="/about"
-                className="inline-flex items-center justify-center rounded-md border border-input bg-background/40 px-5 py-2.5 text-sm font-medium text-foreground transition-colors hover:bg-accent focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="inline-flex items-center justify-center rounded-lg border border-border bg-background/60 px-7 py-3 text-sm font-medium text-foreground backdrop-blur transition-colors hover:bg-accent hover:border-border/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 About us
               </Link>
             </div>
 
-            <dl className="mt-12 grid max-w-md grid-cols-3 gap-6">
+            {/* Stats */}
+            <div className="grid max-w-md grid-cols-3 gap-8 pt-6 border-t border-border/40">
               {[
                 { label: "Devices served", value: 1.4, suffix: "M", decimals: 1 },
                 { label: "Uptime", value: 99.9, suffix: "%", decimals: 1 },
@@ -173,7 +189,7 @@ function Index() {
                   <dt className="text-xs uppercase tracking-widest text-muted-foreground">
                     {s.label}
                   </dt>
-                  <dd className="mt-1 text-2xl font-semibold text-foreground">
+                  <dd className="mt-2 text-3xl font-bold text-foreground">
                     <AnimatedCounter
                       value={s.value}
                       suffix={s.suffix}
@@ -182,42 +198,55 @@ function Index() {
                   </dd>
                 </div>
               ))}
-            </dl>
+            </div>
           </div>
 
-          <LiveSignals />
+          <div className="mt-8 lg:mt-0">
+            <LiveSignals />
+          </div>
         </div>
       </section>
 
-      <section className="border-b border-border">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6 sm:py-20">
-          <h2 className="text-2xl font-semibold tracking-tight text-foreground">
-            What we build
-          </h2>
-          <Tabs defaultValue="edge" className="mt-8">
-            <TabsList className="w-full justify-start overflow-x-auto sm:w-auto">
+      {/* Capabilities Section */}
+      <section className="border-b border-border/50">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+          <div className="mb-12">
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+              What we build
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight text-foreground">
+              Full-stack from sensor to screen
+            </h2>
+          </div>
+
+          <Tabs defaultValue="edge" className="mt-4">
+            <TabsList className="w-full justify-start overflow-x-auto sm:w-auto bg-secondary/40 p-1 rounded-xl">
               {capabilities.map((c) => (
-                <TabsTrigger key={c.id} value={c.id} className="gap-2">
+                <TabsTrigger
+                  key={c.id}
+                  value={c.id}
+                  className="gap-2 rounded-lg data-[state=active]:bg-card data-[state=active]:shadow-md px-4 py-2"
+                >
                   <c.icon className="size-4" aria-hidden="true" />
                   {c.label}
                 </TabsTrigger>
               ))}
             </TabsList>
             {capabilities.map((c) => (
-              <TabsContent key={c.id} value={c.id} className="mt-6">
-                <Card>
-                  <CardHeader>
-                    <CardTitle>{c.title}</CardTitle>
+              <TabsContent key={c.id} value={c.id} className="mt-8">
+                <Card className="glow-surface border-border/60">
+                  <CardHeader className="pb-4">
+                    <CardTitle className="text-2xl">{c.title}</CardTitle>
                   </CardHeader>
-                  <CardContent className="space-y-4">
-                    <p className="max-w-2xl text-sm leading-relaxed text-muted-foreground">
+                  <CardContent className="space-y-6">
+                    <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
                       {c.body}
                     </p>
-                    <ul className="grid gap-2 sm:grid-cols-3">
+                    <ul className="grid gap-3 sm:grid-cols-3">
                       {c.points.map((p) => (
                         <li
                           key={p}
-                          className="rounded-md border border-border bg-secondary/40 px-3 py-2 text-sm text-foreground"
+                          className="rounded-lg border border-border/60 bg-secondary/30 px-4 py-3 text-sm text-foreground font-medium"
                         >
                           {p}
                         </li>
@@ -231,19 +260,28 @@ function Index() {
         </div>
       </section>
 
-      <section className="bg-secondary/25">
-        <div className="mx-auto max-w-6xl px-4 py-16 sm:px-6">
-          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
+      {/* Features Section */}
+      <section className="bg-secondary/20">
+        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+          <div className="mb-12 text-center">
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
+              Principles
+            </p>
+            <h2 className="text-4xl font-bold tracking-tight text-foreground">
+              How we work
+            </h2>
+          </div>
+          <div className="grid gap-6 lg:grid-cols-3">
             {features.map((f) => (
               <Card
                 key={f.title}
-                className="group transition-all duration-300 hover:-translate-y-1 hover:border-primary/40 hover:glow-surface"
+                className="group border-border/50 bg-card/60 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/30 hover:glow-surface hover:shadow-xl hover:shadow-primary/10"
               >
-                <CardHeader className="space-y-3">
-                  <span className="inline-flex size-10 items-center justify-center rounded-md border border-border bg-background text-primary transition-colors group-hover:border-primary/50">
-                    <f.icon className="size-5" aria-hidden="true" />
+                <CardHeader className="space-y-4 pb-4">
+                  <span className="inline-flex size-12 items-center justify-center rounded-xl border border-border/60 bg-primary/10 text-primary transition-colors group-hover:border-primary/40 group-hover:bg-primary/20">
+                    <f.icon className="size-6" aria-hidden="true" />
                   </span>
-                  <CardTitle>{f.title}</CardTitle>
+                  <CardTitle className="text-xl">{f.title}</CardTitle>
                 </CardHeader>
                 <CardContent className="text-sm leading-relaxed text-muted-foreground">
                   {f.body}
