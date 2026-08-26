@@ -10,20 +10,20 @@ import { AnimatedCounter } from "@/components/animated-counter";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Lova — Interactive systems for smart tech" },
+      { title: "Al-Muhtarif — Interactive systems for smart tech" },
       {
         name: "description",
         content:
-          "Lova builds dark-mode interfaces, realtime dashboards, and device software for hardware and AI teams.",
+          "Al-Muhtarif builds modern interfaces, realtime dashboards, and device software for hardware and AI teams.",
       },
       {
         property: "og:title",
-        content: "Lova — Interactive systems for smart tech",
+        content: "Al-Muhtarif — Interactive systems for smart tech",
       },
       {
         property: "og:description",
         content:
-          "Dark-mode interfaces, realtime dashboards, and device software for hardware and AI teams.",
+          "Modern interfaces, realtime dashboards, and device software for hardware and AI teams.",
       },
     ],
   }),
@@ -132,10 +132,10 @@ function Index() {
   return (
     <div>
       {/* Hero Section */}
-      <section className="relative overflow-hidden border-b border-border/50">
-        <div className="tech-grid pointer-events-none absolute inset-0 opacity-40" aria-hidden="true" />
+      <section className="relative overflow-hidden border-b border-border/60">
+        <div className="tech-grid pointer-events-none absolute inset-0 opacity-60" aria-hidden="true" />
         <div
-          className="pointer-events-none absolute -top-40 left-1/2 size-[42rem] -translate-x-1/2 rounded-full opacity-20 blur-3xl"
+          className="pointer-events-none absolute -top-32 left-1/2 size-[36rem] -translate-x-1/2 rounded-full opacity-30 blur-3xl"
           style={{ backgroundImage: "var(--gradient-primary)" }}
           aria-hidden="true"
         />
@@ -145,14 +145,14 @@ function Index() {
           <div className="space-y-8">
             <Badge
               variant="outline"
-              className="border-primary/50 bg-primary/5 px-4 py-1 text-sm font-medium text-primary"
+              className="border-primary/40 bg-primary/8 px-4 py-1 text-sm font-medium text-primary shadow-sm"
             >
               Systems studio — Hardware & AI teams
             </Badge>
 
             <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl leading-[1.05]">
               Interfaces for{" "}
-              <span className="text-gradient-primary">machines that think</span>.
+              <span className="text-gradient-primary">machines that think</span>
             </h1>
 
             <p className="max-w-xl text-lg leading-relaxed text-muted-foreground">
@@ -163,7 +163,7 @@ function Index() {
             <div className="flex flex-wrap gap-4 pt-2">
               <Link
                 to="/contact"
-                className="group inline-flex items-center justify-center rounded-lg bg-primary px-7 py-3 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/20 transition-all hover:brightness-110 hover:shadow-xl hover:shadow-primary/30 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
+                className="group inline-flex items-center justify-center rounded-xl bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:brightness-110 hover:shadow-xl hover:shadow-primary/35 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 focus-visible:ring-offset-background"
               >
                 Start a project
                 <svg className="ml-2 size-4 transition-transform group-hover:translate-x-1" fill="none" viewBox="0 0 24 24" stroke="currentColor">
@@ -172,24 +172,24 @@ function Index() {
               </Link>
               <Link
                 to="/about"
-                className="inline-flex items-center justify-center rounded-lg border border-border bg-background/60 px-7 py-3 text-sm font-medium text-foreground backdrop-blur transition-colors hover:bg-accent hover:border-border/80 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
+                className="inline-flex items-center justify-center rounded-xl border border-border/80 bg-card px-8 py-3.5 text-sm font-medium text-foreground shadow-sm transition-all hover:border-primary/40 hover:shadow-md hover:bg-accent/50 focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring"
               >
                 About us
               </Link>
             </div>
 
             {/* Stats */}
-            <div className="grid max-w-md grid-cols-3 gap-8 pt-6 border-t border-border/40">
+            <div className="grid max-w-md grid-cols-3 gap-8 pt-6 border-t border-border/60">
               {[
                 { label: "Devices served", value: 1.4, suffix: "M", decimals: 1 },
                 { label: "Uptime", value: 99.9, suffix: "%", decimals: 1 },
                 { label: "Ship weeks", value: 6, suffix: "", decimals: 0 },
               ].map((s) => (
                 <div key={s.label}>
-                  <dt className="text-xs uppercase tracking-widest text-muted-foreground">
+                  <dt className="text-xs uppercase tracking-widest text-muted-foreground font-medium">
                     {s.label}
                   </dt>
-                  <dd className="mt-2 text-3xl font-bold text-foreground">
+                  <dd className="mt-2 text-3xl font-bold text-foreground tracking-tight">
                     <AnimatedCounter
                       value={s.value}
                       suffix={s.suffix}
@@ -208,24 +208,24 @@ function Index() {
       </section>
 
       {/* Capabilities Section */}
-      <section className="border-b border-border/50">
+      <section className="border-b border-border/60 bg-card/30">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
           <div className="mb-12">
             <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
               What we build
             </p>
-            <h2 className="text-4xl font-bold tracking-tight text-foreground">
+            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               Full-stack from sensor to screen
             </h2>
           </div>
 
           <Tabs defaultValue="edge" className="mt-4">
-            <TabsList className="w-full justify-start overflow-x-auto sm:w-auto bg-secondary/40 p-1 rounded-xl">
+            <TabsList className="w-full justify-start overflow-x-auto sm:w-auto bg-secondary/60 p-1 rounded-2xl border border-border/60">
               {capabilities.map((c) => (
                 <TabsTrigger
                   key={c.id}
                   value={c.id}
-                  className="gap-2 rounded-lg data-[state=active]:bg-card data-[state=active]:shadow-md px-4 py-2"
+                  className="gap-2 rounded-xl data-[state=active]:bg-card data-[state=active]:shadow-md data-[state=active]:text-primary px-5 py-2.5 font-medium text-muted-foreground hover:text-foreground transition-colors"
                 >
                   <c.icon className="size-4" aria-hidden="true" />
                   {c.label}
@@ -234,9 +234,9 @@ function Index() {
             </TabsList>
             {capabilities.map((c) => (
               <TabsContent key={c.id} value={c.id} className="mt-8">
-                <Card className="glow-surface border-border/60">
+                <Card className="glow-surface border-border/60 bg-card">
                   <CardHeader className="pb-4">
-                    <CardTitle className="text-2xl">{c.title}</CardTitle>
+                    <CardTitle className="text-2xl sm:text-3xl">{c.title}</CardTitle>
                   </CardHeader>
                   <CardContent className="space-y-6">
                     <p className="max-w-2xl text-base leading-relaxed text-muted-foreground">
@@ -246,7 +246,7 @@ function Index() {
                       {c.points.map((p) => (
                         <li
                           key={p}
-                          className="rounded-lg border border-border/60 bg-secondary/30 px-4 py-3 text-sm text-foreground font-medium"
+                          className="rounded-xl border border-border/60 bg-secondary/60 px-4 py-3 text-sm text-foreground font-medium shadow-sm"
                         >
                           {p}
                         </li>
@@ -261,13 +261,13 @@ function Index() {
       </section>
 
       {/* Features Section */}
-      <section className="bg-secondary/20">
+      <section className="bg-secondary/40">
         <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
           <div className="mb-12 text-center">
             <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
               Principles
             </p>
-            <h2 className="text-4xl font-bold tracking-tight text-foreground">
+            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">
               How we work
             </h2>
           </div>
@@ -275,10 +275,10 @@ function Index() {
             {features.map((f) => (
               <Card
                 key={f.title}
-                className="group border-border/50 bg-card/60 backdrop-blur transition-all duration-300 hover:-translate-y-1.5 hover:border-primary/30 hover:glow-surface hover:shadow-xl hover:shadow-primary/10"
+                className="group border-border/60 bg-card shadow-sm transition-all duration-300 hover:-translate-y-2 hover:border-primary/30 hover:shadow-elevated hover:shadow-primary/8"
               >
                 <CardHeader className="space-y-4 pb-4">
-                  <span className="inline-flex size-12 items-center justify-center rounded-xl border border-border/60 bg-primary/10 text-primary transition-colors group-hover:border-primary/40 group-hover:bg-primary/20">
+                  <span className="inline-flex size-12 items-center justify-center rounded-2xl border border-border/60 bg-primary/10 text-primary shadow-sm transition-colors group-hover:border-primary/40 group-hover:bg-primary/15">
                     <f.icon className="size-6" aria-hidden="true" />
                   </span>
                   <CardTitle className="text-xl">{f.title}</CardTitle>
