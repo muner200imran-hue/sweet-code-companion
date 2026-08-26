@@ -140,9 +140,9 @@ function Index() {
           aria-hidden="true"
         />
         <div
-          className="relative mx-auto grid max-w-6xl gap-14 px-4 py-24 sm:px-6 sm:py-32 lg:grid-cols-[1.2fr_1fr] lg:items-center"
+          className="relative mx-auto max-w-4xl px-4 py-24 sm:px-6 sm:py-32"
         >
-          <div className="space-y-8">
+          <div className="space-y-8 max-w-2xl">
             <Badge
               variant="outline"
               className="border-primary/40 bg-primary/8 px-4 py-1 text-sm font-medium text-primary shadow-sm"
@@ -201,7 +201,7 @@ function Index() {
             </div>
           </div>
 
-          <div className="mt-8 lg:mt-0">
+          <div className="mt-8 max-w-md">
             <LiveSignals />
           </div>
         </div>
@@ -209,7 +209,7 @@ function Index() {
 
       {/* Capabilities Section */}
       <section className="border-b border-border/60 bg-card/30">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+        <div className="mx-auto max-w-4xl px-4 py-20 sm:px-6">
           <div className="mb-12">
             <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
               What we build
@@ -262,7 +262,7 @@ function Index() {
 
       {/* Features Section */}
       <section className="bg-secondary/40">
-        <div className="mx-auto max-w-6xl px-4 py-20 sm:px-6">
+        <div className="mx-auto max-w-4xl px-4 py-20 sm:px-6">
           <div className="mb-12 text-center">
             <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">
               Principles
