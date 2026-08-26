@@ -9,8 +9,8 @@ import { Badge } from "@/components/ui/badge";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "AI Studio — Generate images with AI" },
-      { name: "description", content: "Generate stunning images with AI models. No login required." },
+      { title: "استوديو الصور — اصنع صورًا بسهولة" },
+      { name: "description", content: "أنشئ صورًا مذهلة بسهولة باستخدام أفضل نماذج الذكاء الاصطناعي. جرّب الآن." },
     ],
   }),
   component: Index,
@@ -37,21 +37,21 @@ function Index() {
         <div className="absolute inset-0 tech-grid opacity-40" aria-hidden="true" />
         <div className="relative mx-auto max-w-2xl px-4 py-24 text-center sm:px-6 sm:py-32">
           <Badge variant="outline" className="mb-6 border-primary/40 bg-primary/8 px-4 py-1 text-sm font-medium text-primary">
-            Free — No login required
+            مجاني — لا حاجة لتسجيل الدخول
           </Badge>
           <h1 className="text-5xl font-bold tracking-tight text-foreground sm:text-6xl lg:text-7xl leading-[1.05]">
-            Create images with{" "}
-            <span className="text-gradient-primary">AI</span>
+            اصنع صورًا
+            <span className="text-gradient-primary"> بسهولة</span>
           </h1>
           <p className="mt-6 max-w-xl mx-auto text-lg leading-relaxed text-muted-foreground">
-            Generate stunning images using the world's best AI models. Enter a prompt, choose a model, and download your creation in seconds.
+            أنشئ صورًا مذهلة باستخدام أفضل نماذج الذكاء الاصطناعي المتاحة. اكتب وصفًا، اختر نموذجًا، وحمل عملك خلال ثوانٍ.
           </p>
           <div className="mt-8 flex justify-center gap-4">
             <Link to="/generate" className="inline-flex items-center justify-center rounded-xl bg-primary px-8 py-3.5 text-sm font-semibold text-primary-foreground shadow-lg shadow-primary/25 transition-all hover:brightness-110">
-              Start creating
+              ابدأ الآن
             </Link>
             <Link to="/gallery" className="inline-flex items-center justify-center rounded-xl border border-border/80 bg-card px-8 py-3.5 text-sm font-medium text-foreground shadow-sm transition-all hover:border-primary/40">
-              View gallery
+              المعرض
             </Link>
           </div>
         </div>
@@ -61,8 +61,8 @@ function Index() {
       <section className="border-b border-border/60 bg-card/30">
         <div className="mx-auto max-w-2xl px-4 py-20 sm:px-6">
           <div className="mb-10 text-center">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">Choose your model</p>
-            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">6 AI models, one platform</h2>
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">اختر نموذجك</p>
+            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">6 نماذج ذكاء اصطناعي، منصة واحدة</h2>
           </div>
           <Tabs defaultValue={selectedModel} onValueChange={setSelectedModel}>
             <TabsList className="w-full justify-start overflow-x-auto p-1 bg-secondary/60 rounded-2xl border border-border/60 flex-wrap h-auto gap-1">
@@ -92,7 +92,7 @@ function Index() {
                     <p className="text-base text-muted-foreground">{m.description}</p>
                     <Link to="/generate">
                       <Button className="mt-2" style={{ backgroundColor: m.color }}>
-                        Generate with {m.label}
+                        إنشاء بواسطة {m.label}
                       </Button>
                     </Link>
                   </CardContent>
@@ -107,14 +107,14 @@ function Index() {
       <section className="bg-secondary/40">
         <div className="mx-auto max-w-2xl px-4 py-20 sm:px-6">
           <div className="mb-12 text-center">
-            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">How it works</p>
-            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">3 simple steps</h2>
+            <p className="text-xs font-semibold uppercase tracking-widest text-primary mb-3">كيف تعمل</p>
+            <h2 className="text-4xl font-bold tracking-tight text-foreground sm:text-5xl">3 خطوات بسيطة</h2>
           </div>
           <div className="grid gap-6 lg:grid-cols-3">
             {[
-              { icon: Wand2, title: "Write a prompt", body: "Describe the image you want in detail. The more specific, the better the result." },
-              { icon: Zap, title: "Choose a model", body: "Pick from 6 world-class AI image generators, each with unique strengths." },
-              { icon: Image, title: "Download & share", body: "Get high-quality images instantly. No watermarks, no login required." },
+              { icon: Wand2, title: "اكتب الوصف", body: "صف الصورة التي تريدها بالتفصيل. كلما زاد الوصف، كانت النتيجة أفضل." },
+              { icon: Zap, title: "اختر نموذجًا", body: "اختَر من بين 6 مولدات صور احترافية، كل واحد له مميزاته." },
+              { icon: Image, title: "حمّل وشارك", body: "احصل على صور عالية الجودة فورًا. لا علامات مائية، لا حاجة لتسجيل." },
             ].map((f, i) => (
               <Card key={f.title} className="border-border/60 bg-card shadow-sm">
                 <CardHeader>
@@ -134,3 +134,4 @@ function Index() {
     </div>
   );
 }
+
