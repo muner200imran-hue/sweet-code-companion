@@ -3,17 +3,17 @@ import { createFileRoute } from "@tanstack/react-router";
 export const Route = createFileRoute("/about")({
   head: () => ({
     meta: [
-      { title: "About — Al-Damar" },
+      { title: "About — الة سوسن" },
       {
         name: "description",
         content:
-          "Al-Damar is a small team of designers and developers focused on clarity, speed, and long-lived websites for independent teams.",
+          "الة سوسن is a small team of designers and developers focused on clarity, speed, and long-lived websites for independent teams.",
       },
-      { property: "og:title", content: "About — Al-Damar" },
+      { property: "og:title", content: "About — الة سوسن" },
       {
         property: "og:description",
         content:
-          "Al-Damar is a small team of designers and developers focused on clarity, speed, and long-lived websites for independent teams.",
+          "الة سوسن is a small team of designers and developers focused on clarity, speed, and long-lived websites for independent teams.",
       },
     ],
   }),
@@ -42,7 +42,7 @@ function About() {
         About
       </h1>
       <p className="mt-6 text-base leading-relaxed text-muted-foreground sm:text-lg">
-        Al-Damar is a small team of designers and developers. We work
+        الة سوسن is a small team of designers and developers. We work
         directly with founders and marketing leads — no account layers, no
         handoffs that lose the plot.
       </p>
