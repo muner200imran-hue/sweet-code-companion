@@ -10,7 +10,7 @@ import { AnimatedCounter } from "@/components/animated-counter";
 export const Route = createFileRoute("/")({
   head: () => ({
     meta: [
-      { title: "Al-Muhtarif — Interactive systems for smart tech" },
+      { title: "Lova — Interactive systems for smart tech" },
       {
         name: "description",
         content:
@@ -18,7 +18,7 @@ export const Route = createFileRoute("/")({
       },
       {
         property: "og:title",
-        content: "Al-Muhtarif — Interactive systems for smart tech",
+        content: "Lova — Interactive systems for smart tech",
       },
       {
         property: "og:description",
